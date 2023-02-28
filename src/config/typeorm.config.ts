@@ -6,7 +6,7 @@ export const getLocalTypeOrmConfig = (
 ): TypeOrmModuleOptions => {
   return {
     type: 'postgres',
-    host: 'localhost',
+    host: 'mouse.db.elephantsql.com',
     port: configService.get('PORT'),
     username: configService.get('DATABASEUSERNAME'),
     password: configService.get('PASSWORD'),
