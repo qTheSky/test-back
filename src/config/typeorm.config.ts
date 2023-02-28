@@ -6,13 +6,14 @@ export const getLocalTypeOrmConfig = (
 ): TypeOrmModuleOptions => {
   return {
     type: 'postgres',
-    host: 'mouse.db.elephantsql.com',
+    host: 'ep-royal-heart-774400.us-east-2.aws.neon.tech',
     port: configService.get('PORT'),
     username: configService.get('DATABASEUSERNAME'),
     password: configService.get('PASSWORD'),
     database: configService.get('DATABASE'),
     autoLoadEntities: true,
     synchronize: true,
+    ssl: true,
   };
 };
 // export const getCloudTypeOrmConfig = (
