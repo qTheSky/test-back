@@ -1,20 +1,19 @@
-import {ConfigService} from '@nestjs/config';
-import {TypeOrmModuleOptions} from '@nestjs/typeorm';
+import { ConfigService } from '@nestjs/config';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const getLocalTypeOrmConfig = (
-    configService: ConfigService,
+  configService: ConfigService,
 ): TypeOrmModuleOptions => {
-    return {
-        type: 'postgres',
-        host: 'ep-flat-bonus-735130.eu-central-1.aws.neon.tech',
-        port: configService.get('PORT'),
-        username: configService.get('DATABASEUSERNAME'),
-        password: configService.get('PASSWORD'),
-        database: configService.get('DATABASE'),
-        autoLoadEntities: true,
-        synchronize: true,
-        ssl: true,
-    };
+  return {
+    type: 'postgres',
+    host: 'mouse.db.elephantsql.com',
+    port: configService.get('PORT'),
+    username: configService.get('DATABASEUSERNAME'),
+    password: configService.get('PASSWORD'),
+    database: configService.get('DATABASE'),
+    autoLoadEntities: true,
+    synchronize: true,
+  };
 };
 // export const getCloudTypeOrmConfig = (
 //     configService: ConfigService,
